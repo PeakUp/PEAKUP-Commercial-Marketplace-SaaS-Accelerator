@@ -194,8 +194,8 @@ public class HomeController : BaseController
             SubscriptionResult subscriptionDetail = new SubscriptionResult();
             SubscriptionResultExtension subscriptionExtension = new SubscriptionResultExtension();
 
-            this.applicationConfigService.SaveFileToDisk("LogoFile", "contoso-sales.png");
-            this.applicationConfigService.SaveFileToDisk("FaviconFile", "favicon.ico");
+            //this.applicationConfigService.SaveFileToDisk("LogoFile", "contoso-sales.png");
+            //this.applicationConfigService.SaveFileToDisk("FaviconFile", "favicon.ico");
 
             if (this.User.Identity.IsAuthenticated)
             {
@@ -256,6 +256,8 @@ public class HomeController : BaseController
                 }
                 else
                 {
+                    //return RedirectToAction(nameof(HomeController.Subscriptions));
+
                     this.TempData["ShowWelcomeScreen"] = "True";
                     subscriptionExtension.ShowWelcomeScreen = true;
                     return this.View(subscriptionExtension);
